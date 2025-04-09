@@ -1,0 +1,170 @@
+#projects {
+  background-color: $white-color;
+  color: $dark-blue-text;
+  margin-top: -10rem;
+  padding-top: 15rem;
+
+  @include respond(tab-land) {
+    margin-top: 0;
+    padding-top: 5rem;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .role-section {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2열 정렬 */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .role-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .role-card:hover {
+    transform: scale(1.05);
+  }
+
+  .role-card img {
+    width: 80px;
+    /* 이미지 크기 조절 */
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .project-wrapper {
+    margin-bottom: 15rem;
+
+    .sub-title {
+      font-size: 2.3rem;
+    }
+
+    // 프로젝트 메인 이미지
+    .mainImage {
+      width: 100%;
+
+      border: 1px solid;
+    }
+
+
+    // 주요 기능
+    .feature-list {
+      li {
+        font-size: 1.5rem;
+      }
+    }
+
+    // 리스트들의 padding left 
+    .ps {
+      padding-left: 2rem;
+    }
+
+    // 프로젝트 기간 (프로젝트 명 바로 밑)
+    .project-duration {
+      padding-bottom: .5rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ccc;
+      // font-size: .875rem;
+      color: #6c757d;
+    }
+
+
+
+
+
+
+
+
+    // 모르겠는 부분 
+    @include respond(phone) {
+      margin-bottom: 0rem;
+    }
+
+    .row {
+      margin-bottom: 8rem;
+
+      @include respond(phone) {
+        margin-bottom: 4rem;
+      }
+    }
+
+    &__text {
+      text-align: left;
+      background-color: #fff;
+      box-shadow: 0 0 .5rem 0 rgba(68, 68, 68, .4);
+      border-radius: 1rem;
+      padding: 2rem;
+
+      @include respond(phone) {
+        margin-bottom: 2.5rem !important;
+      }
+
+      @include respond(tab-land) {
+        margin-bottom: 4.8rem;
+      }
+
+      &-title {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        margin-bottom: 1.8rem;
+        font-size: 3rem;
+    
+
+
+        @include respond(phone) {
+          font-size: 3rem;
+        }
+      }
+
+      & p>a {
+        color: $secondary-color;
+      }
+    }
+
+    &__image {
+      width: 90%;
+      margin: 0 auto;
+
+      @include respond(tab-land) {
+        width: 100%;
+        margin: 0;
+      }
+
+      & .thumbnail {
+        border: none;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        transition: all 0.2s ease-out;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+        transition: 0.5s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+          0.5s box-shadow,
+          0.5s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+
+        @include respond(phone) {
+          border: 1px solid $light-grey;
+          box-shadow: none;
+          margin-bottom: 3.2rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+// 헤더
+#top {
+ 
+  button {
+    padding: 0;
+    background-color: unset;
+    border: none;
+
+  }
+  .header-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    transition: opacity .3s linear;
+
+
+    .header-content {
+      width: 100%;
+      max-width: 71.25rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      height: 4.5rem;
+      padding: 1.25rem 1.5rem;
+
+      .header-logo {
+        font-weight: 700;
+        font-size: 2.5rem;
+        // color: hsla(0, 0%, 100%, .7);
+        line-height: 2rem;
+      }
+
+
+      .header-nav {
+        button {
+          font-size: 2rem;
+          font-weight: 700;
+          line-height: 2rem;
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+
+
+}
+
+
+
+
+#hero {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 0px;
+  background: $white-color;
+  font-weight: 400;
+  color: $dark-blue-text;
+  padding: 0rem 5.6rem;
+  margin-bottom: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  position: relative;
+
+  // Set position sticky so the jumbotron stays fixed while you scroll.
+  // position: sticky;
+
+  // If you want to set a background image on the hero section, uncomment these with your custom image
+
+  /* background: url("/src/assets/[your-image].png");
+  background-position: center;
+  background-size: cover; */
+
+  @include respond(phone) {
+    padding: 0rem $default-font-size;
+  }
+
+  .container {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+
+    .hero-title {
+      font-size: 5.6rem;
+      font-weight: 700;
+      margin-bottom: 3.2rem;
+      text-align: left;
+
+      @include respond(tab-land) {
+        font-size: 4rem;
+      }
+
+      @include respond(tab-port) {
+        font-size: 3.6rem;
+        text-align: center;
+      }
+
+      @include respond(phone) {
+        font-size: 3.5rem;
+        line-height: 1.5;
+      }
+
+      @include respond(phone-xs) {
+        font-size: 2.8rem;
+      }
+    }
+
+    .hero-cta {
+      display: flex;
+
+      @include respond(tab-port) {
+        justify-content: center;
+      }
+
+      & a {
+        font-size: 2.4rem;
+
+        @include respond(phone) {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  .container2 {
+
+    position: absolute;
+    left: 20%;
+    top: 40%;
+
+  }
+}

@@ -1,0 +1,111 @@
+#skills {
+    clip-path: polygon(0 15vh, 100% 0, 100% 150vh, 0 100%);
+
+
+    color: #fff;
+    background: #fff;
+    margin-top: -14rem;
+    margin-bottom: -1px;
+    padding: 11rem 0 10rem;
+    overflow: visible;
+
+    .skills-container {
+        margin-bottom: 20px;
+
+        h2 {
+            // color: black;
+            // font-size: 2.4rem;
+            font-size: 3.2rem;
+            color: #fff;
+            background: #bdc3c7;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-weight: bold;
+            width: fit-content;
+            z-index: 1;
+        }
+
+        // 아이콘
+        i {
+            font-size: 10rem;
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .2), 0 3px 6px rgba(0, 0, 0, .2);
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        // 아이콘
+        img {
+            font-size: 10rem;
+            width: 120px;
+            height: 120px;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, .2), 0 3px 6px rgba(0, 0, 0, .2);
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        img:hover,
+        i:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        // 넓이 조정한 아이콘
+        .width {
+            width: 135px;
+        }
+
+
+        // 아이콘 박스
+        .icon-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .skills-title {
+            text-transform: uppercase;
+            margin: 0 0 4.5rem;
+            color: #272341;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+
+        .front {
+            margin-bottom: 20px;
+        }
+
+        .backend {
+            margin-bottom: 20px;
+        }
+
+        .database {
+            margin-bottom: 20px;
+        }
+
+        .devops {
+            margin-bottom: 20px;
+        }
+
+        .tools {
+            h2 {
+                margin-right: 50px;
+            }
+
+        }
+
+    }
+
+
+
+}
