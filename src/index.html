@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="styles.scss" />
   <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+  <!-- Bootstrap 5 JS, Popper.js 포함 -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 
 
@@ -44,9 +47,9 @@
         </button>
 
         <nav class="header-nav">
-          <button>자기소개</button>
-          <button>기술스택</button>
-          <button>프로젝트</button>
+          <button data-target="#about">자기소개</button>
+          <button data-target="#skills">기술스택</button>
+          <button data-target="#projects">프로젝트</button>
         </nav>
 
       </div>
@@ -54,6 +57,25 @@
     </header>
 
   </div>
+
+  <!-- 전체 공용 이미지 모달 -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageModalLabel">이미지 크게 보기</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modalImage" class="img-fluid" style="max-width: 100%; max-height: 80vh;" alt="모달 이미지">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- **** Hero Section **** -->
   <section id="hero" class="jumbotron">
@@ -84,7 +106,9 @@
       <div class="section-title load-hidden">
         <h2 class="section-title__text ">자기소개</h2>
         <button class="link-btn">
-          <img class="link-btn__img" src="./assets/white-link.png" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color: transparent;" decoding="async" sizes="100vw" loading="lazy"  alt="">
+          <img class="link-btn__img" src="./assets/white-link.png"
+            style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color: transparent;"
+            decoding="async" sizes="100vw" loading="lazy" alt="">
         </button>
       </div>
 
@@ -181,6 +205,7 @@
           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"
             title="jenkins" />
 
+          <img src="/src/assets/cloudtype.png" alt="">
 
 
         </div>
@@ -210,6 +235,7 @@
 
   </section>
 
+
   <!-- **** Projects Section **** -->
   <section id="projects">
     <div class="container">
@@ -227,12 +253,13 @@
 
               <!-- 프로젝트 제목 -->
               <h3 class="project-wrapper__text-title">1. 여행가자 (4인)</h3>
-              <a rel="noreferrer" href="#" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/tripplanner.png" />
-                </div>
-              </a>
+
+              <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                class="thumbnail rounded js-tilt">
+                <img alt="Project Image" class="img-fluid" src="assets/tripplanner.png" id="modal-img"
+                  data-bs-toggle="modal" data-bs-target="#imageModal" />
+              </div>
+
               <p class="project-duration">2024.12.05 ~ 2025.01.09</p>
 
               <!-- 1. 프로젝트 개요 -->
@@ -258,10 +285,19 @@
               <!-- 3. 사용 기술 스택 -->
               <div>
                 <h4 class="sub-title">🛠️ 사용 기술 스택</h4>
-                <p class="mb-4 ps">React + Spring boot를 이용한 Rest Pull Api 요청
+                <ul class="feature-list">
+                  <li>🔸 <strong>Frontend:</strong> React, SCSS</li>
+                  <li>🔸 <strong>Backend:</strong> Spring Boot 3.4.0</li>
+                  <li>🔸 <strong>Database:</strong> MariaDB</li>
+                  <li>🔸 <strong>외부 API:</strong> 공공데이터포털 관광지 & 여행코스 API</li>
+                  <li>🔸 <strong>개발 도구:</strong> Git, IntelliJ, VSCode </li>
+                </ul>
+                <!-- <p class="mb-4 ps">
+                  React + Spring boot를 이용한 Rest Pull Api 요청
                   <br> Spring Security를 이용한 로그인 기능 구현
                   <br> MariaDB
-                </p>
+                  <br> 공공데이터포털 API를 이용한 관광지, 여행코스 정보를 요청
+                </p> -->
               </div>
 
               <div class="role-section">
@@ -302,10 +338,10 @@
               <div>
                 <h4 class="sub-title">🔗 프로젝트 링크</h4>
                 <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://배포URL">
-                  See Live
+                  사이트
                 </a>
                 <a rel="noreferrer" target="_blank" class="cta-btn text-color-main" href="https://github.com/저장소">
-                  Source Code
+                  깃허브
                 </a>
               </div>
 
@@ -319,12 +355,246 @@
               <!-- 프로젝트 제목 -->
               <h3 class="project-wrapper__text-title">2. WanderLog (2인)</h3>
 
-              <a rel="noreferrer" href="#" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="assets/wanderLogMainPage.png" />
+              <!-- <a rel="noreferrer" href="#" target="_blank"> -->
+              <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                class="thumbnail rounded js-tilt">
+                <img alt="Project Image" class="img-fluid" src="assets/wanderLogMainPage.png" id="modal-img"
+                  data-bs-toggle="modal" data-bs-target="#imageModal" />
+              </div>
+              <!-- </a> -->
+              <p class="project-duration">2025.01.14 ~ 2025.01.23</p>
+
+              <!-- 1. 프로젝트 개요 -->
+              <div>
+                <h4 class="sub-title">📌 프로젝트 개요</h4>
+                <p class="mb-4 ps">
+                  <strong>WanderLog</strong>는 1번째 프로젝트인 여행가자를 2명에서 리뉴얼한 사이트입니다. <br>
+                </p>
+              </div>
+
+              <!-- 2. 주요 기능 -->
+              <div class="mb-1">
+                <h4 class="sub-title">🚀 변경 사항</h4>
+                <ul class="feature-list">
+                  <li>🔹 메인페이지 전체 수정 (프론트, 백엔드)</li>
+                  <li>🔹 게시판, 관광지, 관광 코스 페이지 디자인</li>
+                  <li>🔹 회원가입 페이지 (프론트, 백엔드)</li>
+                  <li>🔹 여행 계획 생성 페이지 (프론트, 백엔드)</li>
+                </ul>
+              </div>
+
+              <!-- 3. 사용 기술 스택 -->
+              <div>
+                <h4 class="sub-title">🛠️ 사용 기술 스택</h4>
+                <ul class="feature-list">
+                  <li>🔸 <strong>Frontend:</strong> React, SCSS</li>
+                  <li>🔸 <strong>Backend:</strong> Spring Boot 3.4.0</li>
+                  <li>🔸 <strong>Database:</strong> MariaDB</li>
+                  <li>🔸 <strong>외부 API:</strong> 공공데이터포털 관광지 & 여행코스 API</li>
+                  <li>🔸 <strong>개발 도구:</strong> Git, IntelliJ, VSCode </li>
+                </ul>
+              </div>
+
+              <div class="role-section">
+                <h4 class="sub-title">👨‍💻 역할 및 기여도</h4>
+
+                <div class="role-grid">
+                  <div class="role-card">
+                    <img src="assets/jsp.png" alt="여행 계획 게시판">
+                    <p>여행 계획 게시판 백엔드 & 프론트엔드</p>
+                  </div>
+
+                  <div class="role-card">
+                    <div class="image-block">
+                      <img src="assets/WanderLog-image/tourist.png" alt="관광지 리스트" class="zoom-image" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal" >
+                      <img src="assets/WanderLog-image/tourist2.png" alt="관광지 리스트2" class="zoom-image" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
+                    <p>관광지 리스트 백엔드 & 프론트엔드</p>
+                  </div>
+
+                  <div class="role-card">
+                    <div class="image-block">
+                      <img src="assets/WanderLog-image/travelcourse.png" alt="관광지 코스 리스트" class="zoom-image" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal" >
+                      <img src="assets/WanderLog-image/travelcourse2.png" alt="관광지 코스 리스트2" class="zoom-image" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
+                    <p>관광지 코스 리스트 백엔드 & 프론트엔드</p>
+                  </div>
+
+                  <div class="role-card">
+                    <img src="assets/jsp.png" alt="메인 페이지 디자인">
+                    <p>메인 페이지 디자인</p>
+                  </div>
                 </div>
-              </a>
+              </div>
+
+              <!-- 5. 배운 점 -->
+              <div>
+                <h4 class="sub-title">📚 배운 점</h4>
+                <p class="mb-4 ps">
+                  &nbsp; 기존에 작성했던 코드를 갈아엎고 리빌딩하면서, 과거의 코드들이 낯설게 느껴지는 경우가 많았고, 
+                  “왜 이런 구조로 짰을까?”라는 생각이 드는 부분도 많았습니다.  
+                   이를 통해 유지보수성을 고려한 코드 작성과 주석의 중요성을 다시 한번 깨달았습니다.  
+                  <br>
+                  &nbsp; 또한, 기능을 시간에 맞춰 정확히 정하고 프로젝트를 진행하니, 전체 진행이 훨씬 원활하다는 점도 느꼈습니다.
+                </p>
+              </div>
+              
+
+              <!-- 6. 깃허브 및 배포 링크 -->
+              <div>
+                <h4 class="sub-title">🔗 프로젝트 링크</h4>
+                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://wanderlogg.store/">
+                  사이트
+                </a>
+                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
+                  href="https://github.com/orgs/WanderLog-kor/repositories">
+                  깃허브
+                </a>
+
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+
+        <!-- 두번째줄 프로젝트 -->
+        <div class="row">
+          <!-- 왼쪽 3번째 프로젝트 (개인(연습용)) -->
+          <div class="col-lg-6 col-sm-12">
+            <div class="project-wrapper__text load-hidden">
+
+              <!-- 프로젝트 제목 -->
+              <h3 class="project-wrapper__text-title">3. 백엔드 연습용 프로젝트 (개인)</h3>
+              <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                class="thumbnail rounded js-tilt">
+                <img alt="Project Image" class="img-fluid" id="modal-img" src="assets/gasMain.png"
+                  data-bs-toggle="modal" data-bs-target="#imageModal" />
+              </div>
+
+              <p class="project-duration">2024.8.12 ~ 2024.9.14</p>
+
+              <!-- 1. 프로젝트 개요 -->
+              <div>
+                <h4 class="sub-title">📌 프로젝트 개요</h4>
+                <p class="mb-4 ps">
+                  학원 국비 수강 기간동안 스프링 시큐리티, JWT토큰, 소셜 로그인을 제대로 익히기 위해 진행한 프로젝트입니다
+                </p>
+              </div>
+
+              <!-- 2. 주요 기능 -->
+              <div class="mb-1">
+                <h4 class="sub-title">🚀 주요 기능</h4>
+                <ul class="feature-list">
+                  <li>🔹 스프링 시큐리티와 JWT토큰을 포함한 로그인</li>
+                  <li>🔹 소셜 로그인, 회원가입</li>
+                  <li>🔹 로그인, 회원가입, 비밀번호 찾기에 모든 유효성 검사</li>
+                  <li>🔹 간단한 카카오 지도 API를 이용한 지도 탐색</li>
+                  <li>🔹 비밀번호 변경</li>
+                </ul>
+              </div>
+
+              <!-- 3. 사용 기술 스택 -->
+              <div>
+                <h4 class="sub-title">🛠️ 사용 기술 스택</h4>
+                <ul class="feature-list">
+                  <li>🔸 <strong>Frontend:</strong> Thymeleaf, CSS, JS(JQuery, Ajax)</li>
+                  <li>🔸 <strong>Backend:</strong> Spring Boot 3.3.4</li>
+                  <li>🔸 <strong>Database:</strong> MariaDB</li>
+                  <li>🔸 <strong>외부 API:</strong> 카카오 지도 API</li>
+                  <li>🔸 <strong>개발 도구:</strong> Git, Eclipse(STS 4), VSCode </li>
+                  <li>🔸 <strong>배포 환경:</strong> CLOUDTYPE</li>
+                </ul>
+              </div>
+
+              <div class="role-section">
+                <h4 class="sub-title">👨‍💻 주요 페이지 (이미지 클릭시 확대됩니다)</h4>
+
+                <div class="role-grid">
+                  <div class="role-card">
+                    <div class="image-block">
+                      <img src="assets/GasStation-image/login.png" alt="로그인 이미지" class="zoom-image" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                      <img src="assets/GasStation-image/login2.png" alt="로그인 이미지2" class="zoom-image" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
+                    <p>로그인 페이지</p>
+                  </div>
+
+                  <div class="role-card">
+                    <div class="image-block">
+                      <img src="assets/GasStation-image/signUp.png" class="zoom-image-one" alt="회원가입 이미지" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
+                    <p>회원가입</p>
+                  </div>
+
+                  <div class="role-card">
+                    <div class="image-block">
+                      <img src="assets/GasStation-image/updateInfo.png" class="zoom-image" alt="회원정보변경 이미지"
+                        id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                      <img src="assets/GasStation-image/updateInfo2.png" class="zoom-image" alt="회원정보변경 이미지2"
+                        id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
+                    <p>회원정보 변경</p>
+                  </div>
+
+                  <div class="role-card">
+                    <div class="image-block">
+                      <img src="assets/GasStation-image/changePw.png" alt="비밀번호 찾기" class="zoom-image"
+                        alt="회원가입 이미지" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                        <img src="assets/GasStation-image/changePw2.png" alt="비밀번호 찾기" class="zoom-image"
+                        alt="회원가입 이미지" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
+                    <p>비밀번호 찾기</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5. 배운 점 -->
+              <div>
+                <h4 class="sub-title">📚 배운 점</h4>
+                <p class="mb-4 ps">
+                  &nbsp; Spring Boot가 3.x대로 넘어가면서 Security 설정 방식이 크게 달라졌다는 점을 직접 SecurityConfig를 작성하면서 익혔습니다.<br>
+                  &nbsp; 또한 JWT 토큰 저장 방식에 대해 고민하며 Cookie와 Local Storage 등 다양한 방식을 직접 적용해보고 차이를 체감할 수 있었습니다.<br>
+                  &nbsp; 이 프로젝트는 구체적인 설계를 하지 않고 깃허브 리드미에 생각나는대로 적으며 진행했는데, 그로 인해 생각날 때마다 기능을 추가하게 되어 비효율적이라는 점을 느꼈습니다.
+                  (기간이 정해져
+                  있어 원래 계획했던 주유소 커스텀 기능을 완전히 구현하지 못했습니다.)
+                </p>
+
+              </div>
+
+
+              <!-- 6. 깃허브 및 배포 링크 -->
+              <div>
+                <h4 class="sub-title">🔗 프로젝트 링크</h4>
+                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
+                  href="https://port-0-gas-m9dwjvl67a91fd06.sel4.cloudtype.app/">
+                  사이트
+                </a>
+                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
+                  href="https://github.com/Maze-o/GAS_STATION">
+                  깃허브
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 오른쪽 4번째 프로젝트 (PGR) -->
+          <div class="col-lg-6 col-sm-12">
+            <div class="project-wrapper__text load-hidden">
+
+              <!-- 프로젝트 제목 -->
+              <h3 class="project-wrapper__text-title">4. PGR (5인)</h3>
+
+              <!-- <a rel="noreferrer" href="#" target="_blank"> -->
+              <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
+                class="thumbnail rounded js-tilt">
+                <img alt="Project Image" class="img-fluid" src="assets/wanderLogMainPage.png" />
+              </div>
+              <!-- </a> -->
               <p class="project-duration">2025.01.14 ~ 2025.01.23</p>
 
               <!-- 1. 프로젝트 개요 -->
@@ -392,12 +662,14 @@
               <!-- 6. 깃허브 및 배포 링크 -->
               <div>
                 <h4 class="sub-title">🔗 프로젝트 링크</h4>
-                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://배포URL">
-                  See Live
+                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://wanderlogg.store/">
+                  사이트
                 </a>
-                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main" href="https://github.com/저장소">
-                  Source Code
+                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
+                  href="https://github.com/abrahamim365/PGR">
+                  깃허브
                 </a>
+
               </div>
 
             </div>
@@ -405,6 +677,8 @@
 
 
         </div>
+
+
 
 
         <!-- Notice: each .row is a project -->
@@ -464,18 +738,6 @@
   </section>
   <!-- /END Projects Section -->
 
-  <!-- **** Contact Section **** -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">연락처</h2>
-      <div class="contact-wrapper load-hidden">
-        <p class="contact-wrapper__text">010-5830-5522</p>
-        <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--resume" href="mailto:example@email.com">Call to
-          Action</a>
-      </div>
-    </div>
-  </section>
-  <!-- /END Contact Section -->
 
   <!-- **** Footer Section **** -->
   <footer class="footer navbar-static-bottom">
@@ -483,24 +745,13 @@
       <a rel="noreferrer" href="#top" class="back-to-top">
         <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
       </a>
-      <!-- <div class="social-links">
-        <a rel="noreferrer" href="#!" target="_blank">
-          <i class="fa fa-twitter fa-inverse"></i>
-        </a>
-        <a rel="noreferrer" href="#!" target="_blank">
-          <i class="fa fa-linkedin fa-inverse"></i>
-        </a>
-        <a rel="noreferrer" href="#!" target="_blank">
-          <i class="fa fa-github fa-inverse"></i>
-        </a>
-      </div> -->
+
 
       <hr />
 
 
       <p class="footer__text">
         © 2025 - 이영훈 제작
-        <!-- <a rel="noreferrer" href="https://github.com/cobiwave" target="_blank">Jacobo Martínez</a> -->
       </p>
 
     </div>

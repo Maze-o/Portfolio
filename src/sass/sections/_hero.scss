@@ -1,12 +1,13 @@
 // 헤더
 #top {
- 
+
   button {
     padding: 0;
     background-color: unset;
     border: none;
 
   }
+
   .header-wrapper {
     position: fixed;
     top: 0;
@@ -15,30 +16,52 @@
     z-index: 10;
     transition: opacity .3s linear;
 
+    &.scrolled {
+      background-color: white;
 
-    .header-content {
-      width: 100%;
-      max-width: 71.25rem;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      height: 4.5rem;
-      padding: 1.25rem 1.5rem;
 
       .header-logo {
-        font-weight: 700;
-        font-size: 2.5rem;
-        // color: hsla(0, 0%, 100%, .7);
-        line-height: 2rem;
+        color: #333 !important;
       }
-
 
       .header-nav {
         button {
+          color: #333 !important;
+        }
+
+      }
+
+
+    }
+
+    .header-content {
+      width: 100%;
+      max-width: 100.25rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      height: 6.5rem;
+      padding: 1.25rem 1.5rem;
+
+      // 헤더의 왼쪽
+      .header-logo {
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: hsla(0, 0%, 100%, .7);
+        line-height: 4.5rem;
+      }
+
+
+      // 헤더의 오른쪽
+      .header-nav {
+
+
+        button {
           font-size: 2rem;
           font-weight: 700;
-          line-height: 2rem;
-          padding: 0 1rem;
+          line-height: 4.5rem;
+          padding: 0 2rem;
+          color: hsla(0, 0%, 100%, .7);
         }
       }
     }
@@ -49,16 +72,19 @@
 
 
 
-
+// 상단 이미지 부분
 #hero {
+  background-image: url("/src/assets/topHeaderImage2.jpg");
+  background-size: cover;
+  background-position: center;
   min-height: 100vh;
   height: 100vh;
   display: flex;
   align-items: center;
   border-bottom: 0px;
-  background: $white-color;
+  // background: $white-color;
   font-weight: 400;
-  color: $dark-blue-text;
+  color: #fff;
   padding: 0rem 5.6rem;
   margin-bottom: 0;
   top: 0;

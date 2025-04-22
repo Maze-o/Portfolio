@@ -1,8 +1,17 @@
+
+.modal-dialog {
+  max-width: 70% !important;
+}
+
 #projects {
   background-color: $white-color;
   color: $dark-blue-text;
   margin-top: -10rem;
   padding-top: 15rem;
+
+  #modal-img:hover {
+    cursor: pointer;
+  }
 
   @include respond(tab-land) {
     margin-top: 0;
@@ -15,7 +24,8 @@
 
   .role-section {
     text-align: center;
-    margin-top: 30px;
+    margin: 30px 0;
+    
   }
 
   .role-grid {
@@ -29,6 +39,9 @@
   }
 
   .role-card {
+    p {
+      margin: 0;
+    }
     background: #fff;
     padding: 15px;
     border-radius: 10px;
@@ -37,11 +50,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.2s ease-in-out;
+    // transition: transform 0.2s ease-in-out;
+
+    .image-block {
+      display:flex;
+
+      .zoom-image {
+        height: 150px;
+        width: 131px;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+      }
+      .zoom-image:hover {
+        cursor: pointer;
+        transform: scale(1.5);
+      }
+
+      .zoom-image-one {
+        height: 150px;
+        width: 200px;
+        transition: transform 0.3s ease;
+        transform-origin: center;
+      }
+
+      .zoom-image-one:hover {
+        cursor: pointer;
+        transform: scale(1.5);
+      }
+
+    }
   }
 
   .role-card:hover {
-    transform: scale(1.05);
+    // transform: scale(1.05);
   }
 
   .role-card img {
