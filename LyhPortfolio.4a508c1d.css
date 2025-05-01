@@ -14008,15 +14008,15 @@ section {
   font-size: 1.6rem;
 }
 
-#projects .project-wrapper #readMeContent p, #projects .project-wrapper #readMeContent h2, #projects .project-wrapper #readMeContent h3 {
+#projects .project-wrapper #readMeContent p, #projects .project-wrapper #readMeContent h2, #projects .project-wrapper #readMeContent h3, #projects .project-wrapper #readMeContent1 p, #projects .project-wrapper #readMeContent1 h2, #projects .project-wrapper #readMeContent1 h3 {
   padding-left: 2rem;
 }
 
-#projects .project-wrapper #readMeContent ul, #projects .project-wrapper #readMeContent li {
+#projects .project-wrapper #readMeContent ul, #projects .project-wrapper #readMeContent li, #projects .project-wrapper #readMeContent1 ul, #projects .project-wrapper #readMeContent1 li {
   font-size: 1.55rem;
 }
 
-#projects .project-wrapper #readMeContent table {
+#projects .project-wrapper #readMeContent table, #projects .project-wrapper #readMeContent1 table {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
@@ -14024,21 +14024,21 @@ section {
   overflow: auto;
 }
 
-#projects .project-wrapper #readMeContent table strong, #projects .project-wrapper #readMeContent table td {
+#projects .project-wrapper #readMeContent table strong, #projects .project-wrapper #readMeContent table td, #projects .project-wrapper #readMeContent1 table strong, #projects .project-wrapper #readMeContent1 table td {
   font-size: 1.55rem;
 }
 
-#projects .project-wrapper #readMeContent th, #projects .project-wrapper #readMeContent td {
+#projects .project-wrapper #readMeContent th, #projects .project-wrapper #readMeContent td, #projects .project-wrapper #readMeContent1 th, #projects .project-wrapper #readMeContent1 td {
   border: 1px solid #d0d7de;
   padding: 6px 13px;
 }
 
-#projects .project-wrapper #readMeContent thead {
+#projects .project-wrapper #readMeContent thead, #projects .project-wrapper #readMeContent1 thead {
   background-color: #f6f8fa;
   font-weight: 600;
 }
 
-#projects .project-wrapper #readMeContent div {
+#projects .project-wrapper #readMeContent div, #projects .project-wrapper #readMeContent1 div {
   grid-template-columns: repeat(2, auto);
   grid-auto-flow: column;
   align-items: center;
@@ -14046,7 +14046,7 @@ section {
   display: grid;
 }
 
-#projects .project-wrapper #readMeContent img {
+#projects .project-wrapper #readMeContent img, #projects .project-wrapper #readMeContent1 img {
   max-width: 100%;
   height: auto;
   margin: 1rem auto;

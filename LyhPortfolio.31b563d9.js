@@ -713,7 +713,27 @@ zoomImages.forEach((image)=>{
         modalImage.src = this.src; // 클릭한 이미지의 src를 모달에 반영
     });
 });
-// 모달 열렸을 때 GitHub에서 ReadMe 파일 내용 불러오기
+// 모달 열렸을 때 GitHub에서 ReadMe 파일 내용 불러오기 (TripPlanner)
+document.getElementById('readMeModal1').addEventListener('shown.bs.modal', function() {
+    fetch('https://api.github.com/repos/TripPlanner-MY/TripPlanner_BN/contents/README.md') // 수정된 GitHub API 주소
+    .then((response)=>response.json()).then((data)=>{
+        const decodedContent = atob(data.content); // base64 디코딩
+        // TextDecoder를 사용하여 UTF-8로 디코딩
+        const utf8DecodedContent = new TextDecoder('utf-8').decode(new Uint8Array([
+            ...decodedContent
+        ].map((c)=>c.charCodeAt(0))));
+        // 이미지 경로를 절대 경로로 변경
+        const updatedContent = utf8DecodedContent.replace(/src="(\/[^"]+)"/g, (match, p1)=>{
+            return `src="https://raw.githubusercontent.com/TripPlanner-MY/TripPlanner_BN/main${p1}"`;
+        });
+        // marked.js로 마크다운 변환
+        document.getElementById('readMeContent1').innerHTML = marked.marked(updatedContent);
+    }).catch((error)=>{
+        console.error('Error fetching ReadMe file:', error);
+        document.getElementById('readMeContent1').innerHTML = "<p>ReadMe \uD30C\uC77C\uC744 \uBD88\uB7EC\uC624\uB294 \uB370 \uBB38\uC81C\uAC00 \uBC1C\uC0DD\uD588\uC2B5\uB2C8\uB2E4.</p>";
+    });
+});
+// 모달 열렸을 때 GitHub에서 ReadMe 파일 내용 불러오기 (PGR)
 document.getElementById('readMeModal').addEventListener('shown.bs.modal', function() {
     fetch('https://api.github.com/repos/Maze-o/PGR/contents/README.md') // GitHub API를 통해 raw 콘텐츠 가져오기
     .then((response)=>response.json()).then((data)=>{
