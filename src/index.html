@@ -13,14 +13,18 @@
   <meta name="keywords" content="[username], [name], skill" />
   <!-- Todo: improve your SEO by adding a small description of you -->
   <meta name="description" content="[Your name here] | Developer" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=contacts" />
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="styles.scss" />
   <script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
   <!-- Bootstrap 5 JS, Popper.js 포함 -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <!-- 마크다운을 HTML로 변환하는 marked.js 라이브러리 추가 -->
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 
@@ -85,16 +89,6 @@
         <br />
         저의 포트폴리오를 소개합니다!
       </h1>
-
-      <!-- <p class="hero-cta load-hidden">
-          <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about"
-            >밑으로</a
-          >
-        </p> -->
-    </div>
-
-    <div class="container2">
-
     </div>
   </section>
   <!-- /END Hero Section -->
@@ -113,22 +107,98 @@
       </div>
 
       <div class="row about-wrapper">
-        <div class="col-md-6 col-sm-12">
+        <div class="col-md-4 col-sm-12">
           <div class="about-wrapper__image load-hidden">
             <img alt="Profile Image" class="img-fluid rounded shadow-lg" height="auto" width="300px"
               src="/src/assets/profile.jpg" alt="Profile Image" />
           </div>
         </div>
-        <div class="col-md-6 col-sm-12">
-          <div class="about-wrapper__info load-hidden">
-            <p class="about-wrapper__info-text">
-              This is where you can describe about yourself. The more you
-              describe about yourself, the more chances you have!
-            </p>
-            <p class="about-wrapper__info-text">
-              Extra Information about you! like hobbies and your goals.
-            </p>
+        <div class="col-md-8 col-sm-12">
+
+          <div class="about-myself  load-hidden">
+            안녕하세요, 웹 개발자를 꿈꾸는 <span class="text-color-main">이영훈</span>입니다. <br>
+            이 포트폴리오는 제가 첫걸음을 내디딘 과정들을 담은 이야기입니다. <br>
+            앞으로 더 성장하는 개발자가 되기 위해 계속해서 도전할 것입니다! <br>
           </div>
+
+          <div class="about-wrapper__info load-hidden">
+
+
+            <div class="about-content">
+              <div class="about-box">
+                <span class="material-symbols-outlined">
+                  location_on
+                </span>
+                <div>
+                  <label>주소</label>
+                  <div>대구광역시 달성군 논공읍 9길 39</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-content">
+              <div class="about-box">
+                <span class="material-symbols-outlined">
+                  phone_iphone
+                </span>
+                <div>
+                  <label>전화번호</label>
+                  <div>010-5830-5522</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-content">
+              <div class="about-box">
+                <span class="material-symbols-outlined">
+                  mail
+                </span>
+                <div>
+                  <label>이메일</label>
+                  <div>ilsame9970@gmail.com</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-content">
+              <div class="about-box">
+                <span class="material-symbols-outlined">
+                  directions_car
+                </span>
+                <div>
+                  <label>운전경력</label>
+                  <div>2024.07.16일부터</div>
+                  <div>1종보통</div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="about-content">
+              <div class="about-box">
+                <img src="./assets/GitHub-Logo.png" class="icon">
+
+                <div>
+
+                  <a href="https://github.com/Maze-o" target="_blank">깃허브</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-content">
+              <div class="about-box">
+                <img src="./assets/velog.png" alt="Velog" class="icon" />
+
+                <div>
+                  <a href="https://velog.io/@ilsame9970/posts" target="_blank">Velog 블로그</a>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>
@@ -256,7 +326,7 @@
 
               <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
                 class="thumbnail rounded js-tilt">
-                <img alt="Project Image" class="img-fluid" src="/src/assets/tripplanner.png" id="modal-img"
+                <img alt="Project Image" class="img-fluid" src="./assets/tripplanner.png" id="modal-img"
                   data-bs-toggle="modal" data-bs-target="#imageModal" />
               </div>
 
@@ -291,13 +361,10 @@
                   <li>🔸 <strong>Database:</strong> MariaDB</li>
                   <li>🔸 <strong>외부 API:</strong> 공공데이터포털 관광지 & 여행코스 API</li>
                   <li>🔸 <strong>개발 도구:</strong> Git, IntelliJ, VSCode </li>
+                  <li>🔸 <strong>배포 환경:</strong> Backend - AWS EC2, Frontend - GitHub Pages</li>
+
                 </ul>
-                <!-- <p class="mb-4 ps">
-                  React + Spring boot를 이용한 Rest Pull Api 요청
-                  <br> Spring Security를 이용한 로그인 기능 구현
-                  <br> MariaDB
-                  <br> 공공데이터포털 API를 이용한 관광지, 여행코스 정보를 요청
-                </p> -->
+
               </div>
 
               <div class="role-section">
@@ -305,22 +372,34 @@
 
                 <div class="role-grid">
                   <div class="role-card">
-                    <img src="/src/assets/jsp.png" alt="여행 계획 게시판">
+                    <div class="image-block">
+                      <img src="./assets/board.png" alt="관광지 리스트" class="zoom-image-one" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
                     <p>여행 계획 게시판 백엔드 & 프론트엔드</p>
                   </div>
 
                   <div class="role-card">
-                    <img src="/src/assets/jsp.png" alt="관광지 리스트">
+                    <div class="image-block">
+                      <img src="./assets/1tourist.png" alt="관광지 리스트" class="zoom-image" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
                     <p>관광지 리스트 백엔드 & 프론트엔드</p>
                   </div>
 
                   <div class="role-card">
-                    <img src="/src/assets/jsp.png" alt="관광지 코스 리스트">
+                    <div class="image-block">
+                      <img src="./assets/1travelcourse.png" alt="관광지 리스트" class="zoom-image" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
                     <p>관광지 코스 리스트 백엔드 & 프론트엔드</p>
                   </div>
 
                   <div class="role-card">
-                    <img src="/src/assets/jsp.png" alt="메인 페이지 디자인">
+                    <div class="image-block">
+                      <img src="./assets/tripplanner.png" alt="관광지 리스트" class="zoom-image" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
                     <p>메인 페이지 디자인</p>
                   </div>
                 </div>
@@ -330,19 +409,54 @@
               <div>
                 <h4 class="sub-title">📚 배운 점</h4>
                 <p class="mb-4 ps">
-                  API 호출 최적화, 상태 관리 개선, 협업 툴(Figma, Git) 활용법을 익혔습니다.
+                  &emsp; 처음으로 백엔드와 프론트를 Spring Boot와 React로 나누어 진행한 프로젝트였습니다. 이 과정에서
+                  백엔드와 프론트엔드 간의 소통이 얼마나 중요한지를 깊이 느낄 수 있었습니다.<br />
+                  &emsp; 데이터를 주고받을 때, 반대측에서 어떤 방식으로 데이터를 주고받는지에 대한 고민은 매우 흥미로웠고, 양쪽을 모두 직접 경험해보며 협업에 있어 어떤 방식이 효율적인지에 대한
+                  감각을 익힐 수 있었습니다.<br />
+                  &emsp;특히 API 명세를 명확히 하고, 예외 상황을 함께 고려하는 과정이 협업의 핵심이라는 것을 배웠습니다.<br />
+                  &emsp;이 프로젝트를 통해 백엔드와 프론트엔드 모두에 대한 이해도를 높일 수 있었고, 팀원들과의 커뮤니케이션 능력 또한 한층 성장할 수 있는 계기가 되었습니다.
                 </p>
               </div>
 
               <!-- 6. 깃허브 및 배포 링크 -->
               <div>
                 <h4 class="sub-title">🔗 프로젝트 링크</h4>
-                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://배포URL">
+                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="https://tripplanner.store">
                   사이트
                 </a>
-                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main" href="https://github.com/저장소">
+                <a rel="noreferrer" target="_blank" class="cta-btn text-color-main"
+                  href="https://github.com/orgs/TripPlanner-MY/repositories">
                   깃허브
                 </a>
+                <!-- ReadMe 모달 버튼 -->
+                <button type="button" class="cta-btn cta-btn--hero" data-bs-toggle="modal"
+                  data-bs-target="#readMeModal1">
+                  README
+                </button>
+
+              </div>
+
+              <!-- 모달 구조 -->
+              <div class="modal fade" id="readMeModal1" tabindex="-1" aria-labelledby="readMeModalLabel1"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="readMeModalLabel1">프로젝트 README</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+         
+                      <div id="readMeContent1">
+
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
             </div>
@@ -392,37 +506,63 @@
                   <li>🔸 <strong>Database:</strong> MariaDB</li>
                   <li>🔸 <strong>외부 API:</strong> 공공데이터포털 관광지 & 여행코스 API</li>
                   <li>🔸 <strong>개발 도구:</strong> Git, IntelliJ, VSCode </li>
+                  <li>🔸 <strong>배포 환경:</strong> Backend - AWS EC2, Frontend - GitHub Pages</li>
                 </ul>
               </div>
 
               <div class="role-section">
-                <h4 class="sub-title">👨‍💻 역할 및 기여도</h4>
+                <h4 class="sub-title">👨‍💻 직접 변경한 페이지</h4>
 
                 <div class="role-grid">
                   <div class="role-card">
-                    <img src="/src/assets/jsp.png" alt="여행 계획 게시판">
-                    <p>여행 계획 게시판 백엔드 & 프론트엔드</p>
+                    <div class="image-block">
+                      <img src="./assets/wanderlogboard3.png" alt="게시판" class="zoom-image1" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                      <img src="./assets/wanderLogBoard.png" alt="게시판2" class="zoom-image1" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                      <img src="./assets/wanderLogBoard2.png" alt="게시판3" class="zoom-image1" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
+                    <p>여행 계획 게시판</p>
                   </div>
 
                   <div class="role-card">
                     <div class="image-block">
-                      <img src="/src/assets/WanderLog-image/tourist.png" alt="관광지 리스트" class="zoom-image" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal" >
-                      <img src="/src/assets/WanderLog-image/tourist2.png" alt="관광지 리스트2" class="zoom-image" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                      <img src="./assets/WanderLog-image/tourist.png" alt="관광지 리스트" class="zoom-image" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
                     </div>
-                    <p>관광지 리스트 백엔드 & 프론트엔드</p>
+                    <p>관광지 리스트</p>
                   </div>
 
                   <div class="role-card">
                     <div class="image-block">
-                      <img src="/src/assets/WanderLog-image/travelcourse.png" alt="관광지 코스 리스트" class="zoom-image" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal" >
-                      <img src="/src/assets/WanderLog-image/travelcourse2.png" alt="관광지 코스 리스트2" class="zoom-image" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                      <img src="./assets/WanderLog-image/travelcourse.png" alt="관광지 코스 리스트" class="zoom-image"
+                        id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
+                      <img src="./assets/WanderLog-image/travelcourse2.png" alt="관광지 코스 리스트2" class="zoom-image"
+                        id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
                     </div>
-                    <p>관광지 코스 리스트 백엔드 & 프론트엔드</p>
+                    <p>관광지 코스 리스트</p>
                   </div>
 
                   <div class="role-card">
-                    <img src="/src/assets/jsp.png" alt="메인 페이지 디자인">
-                    <p>메인 페이지 디자인</p>
+                    <div class="image-block">
+                      <img src="./assets/main1.png" alt="메인" class="zoom-image1" id="modal-img" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                      <img src="./assets/main2.png" alt="메인2" class="zoom-image1" id="modal-img" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                      <img src="./assets/main3.png" alt="메인3" class="zoom-image1" id="modal-img" data-bs-toggle="modal"
+                        data-bs-target="#imageModal">
+                    </div>
+                    <p>메인 페이지</p>
+                  </div>
+
+                  <div class="role-card">
+                    <div class="image-block">
+                      <img src="./assets/wanderlogSignup.png" alt="회원가입" class="zoom-image-one" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+
+                    </div>
+                    <p>회원가입 페이지</p>
                   </div>
                 </div>
               </div>
@@ -431,14 +571,14 @@
               <div>
                 <h4 class="sub-title">📚 배운 점</h4>
                 <p class="mb-4 ps">
-                  &nbsp; 기존에 작성했던 코드를 갈아엎고 리빌딩하면서, 과거의 코드들이 낯설게 느껴지는 경우가 많았고, 
-                  “왜 이런 구조로 짰을까?”라는 생각이 드는 부분도 많았습니다.  
-                   이를 통해 유지보수성을 고려한 코드 작성과 주석의 중요성을 다시 한번 깨달았습니다.  
+                  &nbsp; 기존에 작성했던 코드를 갈아엎고 리빌딩하면서, 과거의 코드들이 낯설게 느껴지는 경우가 많았고,
+                  “왜 이런 구조로 짰을까?”라는 생각이 드는 부분도 많았습니다.
+                  이를 통해 유지보수성을 고려한 코드 작성과 주석의 중요성을 다시 한번 깨달았습니다.
                   <br>
                   &nbsp; 또한, 기능을 시간에 맞춰 정확히 정하고 프로젝트를 진행하니, 전체 진행이 훨씬 원활하다는 점도 느꼈습니다.
                 </p>
               </div>
-              
+
 
               <!-- 6. 깃허브 및 배포 링크 -->
               <div>
@@ -451,6 +591,11 @@
                   깃허브
                 </a>
 
+                <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero"
+                  href="https://www.notion.so/WanderLog-17a95fc6fbe0808694c2f39340f5ce58?pvs=4">
+                  Notion
+                </a>
+                
               </div>
 
             </div>
@@ -487,11 +632,12 @@
               <div class="mb-1">
                 <h4 class="sub-title">🚀 주요 기능</h4>
                 <ul class="feature-list">
-                  <li>🔹 스프링 시큐리티와 JWT토큰을 포함한 로그인</li>
-                  <li>🔹 소셜 로그인, 회원가입</li>
-                  <li>🔹 로그인, 회원가입, 비밀번호 찾기에 모든 유효성 검사</li>
-                  <li>🔹 간단한 카카오 지도 API를 이용한 지도 탐색</li>
-                  <li>🔹 비밀번호 변경</li>
+                  <li>🔹 스프링 시큐리티와 JWT 토큰을 포함한 로그인</li>
+                  <li>🔹 소셜 로그인 및 회원가입 기능 구현</li>
+                  <li>🔹 모든 인증 기능에 유효성 검사 적용</li>
+                  <li>🔹 Ajax 기반 REST API 요청 방식으로 로그인/회원가입 처리</li>
+                  <li>🔹 카카오 지도 API를 활용한 간단한 위치 탐색</li>
+                  <li>🔹 비밀번호 변경 기능 구현</li>
                 </ul>
               </div>
 
@@ -500,7 +646,7 @@
                 <h4 class="sub-title">🛠️ 사용 기술 스택</h4>
                 <ul class="feature-list">
                   <li>🔸 <strong>Frontend:</strong> Thymeleaf, CSS, JS(JQuery, Ajax)</li>
-                  <li>🔸 <strong>Backend:</strong> Spring Boot 3.3.4</li>
+                  <li>🔸 <strong>Backend:</strong> Spring Boot 3.3.4 (JPA)</li>
                   <li>🔸 <strong>Database:</strong> MariaDB</li>
                   <li>🔸 <strong>외부 API:</strong> 카카오 지도 API</li>
                   <li>🔸 <strong>개발 도구:</strong> Git, Eclipse(STS 4), VSCode </li>
@@ -516,18 +662,20 @@
                     <div class="image-block">
                       <img src="/src/assets/GasStation-image/login.png" alt="로그인 이미지" class="zoom-image" id="modal-img"
                         data-bs-toggle="modal" data-bs-target="#imageModal">
-                      <img src="/src/assets/GasStation-image/login2.png" alt="로그인 이미지2" class="zoom-image" id="modal-img"
-                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                      <img src="/src/assets/GasStation-image/login2.png" alt="로그인 이미지2" class="zoom-image"
+                        id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
                     </div>
-                    <p>로그인 페이지</p>
+                    <p>로그인</p>
+                    <!-- <h5>JWT토큰을 이용한 로그인, 소셜로그인이 구현되어 있습니다. 유효성 검사도 포함됩니다</h5> -->
                   </div>
 
                   <div class="role-card">
                     <div class="image-block">
-                      <img src="/src/assets/GasStation-image/signUp.png" class="zoom-image-one" alt="회원가입 이미지" id="modal-img"
-                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                      <img src="/src/assets/GasStation-image/signUp.png" class="zoom-image-one" alt="회원가입 이미지"
+                        id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
                     </div>
                     <p>회원가입</p>
+                    <!-- <h5>ajax통신을 이용한 유효성 검사와 중복 방지가 전부 들어가 있습니다.</h5> -->
                   </div>
 
                   <div class="role-card">
@@ -538,13 +686,14 @@
                         id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
                     </div>
                     <p>회원정보 변경</p>
+                    <h5></h5>
                   </div>
 
                   <div class="role-card">
                     <div class="image-block">
                       <img src="/src/assets/GasStation-image/changePw.png" alt="비밀번호 찾기" class="zoom-image"
                         alt="회원가입 이미지" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
-                        <img src="/src/assets/GasStation-image/changePw2.png" alt="비밀번호 찾기" class="zoom-image"
+                      <img src="/src/assets/GasStation-image/changePw2.png" alt="비밀번호 찾기" class="zoom-image"
                         alt="회원가입 이미지" id="modal-img" data-bs-toggle="modal" data-bs-target="#imageModal">
                     </div>
                     <p>비밀번호 찾기</p>
@@ -592,62 +741,86 @@
               <!-- <a rel="noreferrer" href="#" target="_blank"> -->
               <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
                 class="thumbnail rounded js-tilt">
-                <img alt="Project Image" class="img-fluid" src="/src/assets/wanderLogMainPage.png" />
+                <img alt="Project Image" class="img-fluid" src="/src/assets/pgr.png" id="modal-img"
+                  data-bs-toggle="modal" data-bs-target="#imageModal" />
               </div>
               <!-- </a> -->
-              <p class="project-duration">2025.01.14 ~ 2025.01.23</p>
+              <p class="project-duration">2021.1.20 ~ 2021.3.15</p>
 
               <!-- 1. 프로젝트 개요 -->
               <div>
                 <h4 class="sub-title">📌 프로젝트 개요</h4>
                 <p class="mb-4 ps">
-                  <strong>WanderLog</strong>는 1번째 프로젝트인 여행가자를 2명에서 리뉴얼한 사이트입니다. <br>
+                  <strong>PGR</strong> = 'Premier League + 잘알' 과 'programming + 잘알' 의 두 가지 의미를 가진 프로젝트 이름입니다. <br>
+                  EPL(English Premier League)을 잘 몰라도 즐겁게 볼 수 있도록 도와줄 수 있는 축구 통계사이트입니다.
                 </p>
               </div>
 
               <!-- 2. 주요 기능 -->
               <div class="mb-1">
-                <h4 class="sub-title">🚀 변경 사항</h4>
+                <h4 class="sub-title">🚀 주요 기능</h4>
                 <ul class="feature-list">
-                  <li>🔹 메인페이지 전체 수정 (프론트, 백엔드)</li>
-                  <li>🔹 게시판, 관광지, 관광 코스 페이지 디자인</li>
-                  <li>🔹 회원가입 페이지 (프론트, 백엔드)</li>
-                  <li>🔹 여행 계획 생성 페이지 (프론트, 백엔드)</li>
+                  <li>🔹 Gallery(게시판) 로그인 한 사람은 누구나 글을 쓸 수 있습니다</li>
+                  <li>🔹 Betting - 회원가입 시 기본포인트가 지급됩니다. 포인트를 사용해 경기의 결과를 예측해 포인트를 걸어볼 수 있습니다</li>
+                  <li>🔹 Team - 리그 팀들의 정보를 실시간으로 볼 수 있습니다</li>
+                  <li>🔹 Schedule - 지난 6개월 까지의 경기 일정과, 앞으로의 경기 일정을 볼 수 있습니다</li>
+                  <li>🔹 로그인, 회원가입 </li>
                 </ul>
               </div>
 
               <!-- 3. 사용 기술 스택 -->
               <div>
                 <h4 class="sub-title">🛠️ 사용 기술 스택</h4>
-                <p class="mb-4 ps">Ract + Spring boot를 이용한 Rest Pull Api 요청
-                  <br> Spring Security를 이용한 로그인 기능 구현
-                  <br> MariaDB
-                </p>
+                <ul class="feature-list">
+                  <li>🔸 <strong>Frontend:</strong> Thymeleaf, CSS, JS(JQuery, Ajax) </li>
+                  <li>🔸 <strong>Backend:</strong> Spring Boot 2.4.2 (Mybatis)</li>
+                  <li>🔸 <strong>Database:</strong> MariaDB</li>
+                  <li>🔸 <strong>개발 도구:</strong> Git, Eclipse </li>
+                  <li>🔸 <strong>배포 환경:</strong> Naver Cloud </li>
+                </ul>
               </div>
 
               <div class="role-section">
-                <h4 class="sub-title">👨‍💻 역할 및 기여도</h4>
+                <h4 class="sub-title">👨‍💻 역할</h4>
 
                 <div class="role-grid">
                   <div class="role-card">
-                    <img src="/src/assets/jsp.png" alt="여행 계획 게시판">
-                    <p>여행 계획 게시판 백e엔드 & 프론트엔드</p>
+                    <div class="image-block">
+                      <img src="./assets/PgrSignIn.png" alt="로그인" class="zoom-image-one" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
+                    <p>로그인 기능 구현</p>
                   </div>
 
                   <div class="role-card">
-                    <img src="/src/assets/jsp.png" alt="관광지 리스트">
-                    <p>관광지 리스트 백엔드 & 프론트엔드</p>
+                    <div class="image-block">
+                      <img src="./assets/PgrSignUp.png" alt="회원가입" class="zoom-image-one" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
+                    <p>회원가입 기능 구현</p>
                   </div>
 
                   <div class="role-card">
-                    <img src="/src/assets/jsp.png" alt="관광지 코스 리스트">
-                    <p>관광지 코스 리스트 백엔드 & 프론트엔드</p>
+                    <div class="image-block">
+
+                      <img src="./assets/PgrMypage.png" alt="마이페이지" class="zoom-image" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                      <img src="./assets/PgrMypage2.png" alt="마이페이지" class="zoom-image" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
+                    <p>마이페이지 구현</p>
                   </div>
 
                   <div class="role-card">
-                    <img src="/src/assets/jsp.png" alt="메인 페이지 디자인">
-                    <p>메인 페이지 디자인</p>
+                    <div class="image-block">
+                      <img src="./assets/PgrFindPw.png" alt="비밀번호 찾기" class="zoom-image-one" id="modal-img"
+                        data-bs-toggle="modal" data-bs-target="#imageModal">
+                    </div>
+                    <p>비밀번호 찾기 기능 구현</p>
                   </div>
+
+
+
                 </div>
               </div>
 
@@ -655,7 +828,11 @@
               <div>
                 <h4 class="sub-title">📚 배운 점</h4>
                 <p class="mb-4 ps">
-                  API 호출 최적화, 상태 관리 개선, 협업 툴(Figma, Git) 활용법을 익혔습니다.
+                  &nbsp; 처음 해보는 5인 협업 프로젝트였고, 설계에 대한 이해도 없이 시작해서 어려움이 많았습니다.<br />
+                  &nbsp; 기획부터 구현까지 하나하나 부딪히며 진행하다 보니, 개발뿐 아니라 협업의 중요성도 많이 느낄 수 있었습니다.<br />
+                  &nbsp; 기능을 나누고 합치는 과정에서 충돌이나 오류도 자주 발생했지만, 그만큼 해결해 나가며 팀워크도 함께 성장했습니다.<br />
+                  &nbsp; 무엇보다 점점 완성되어 가는 결과물을 보면서 개발에 대한 흥미와 보람을 느꼈고,<br />
+                  이 경험이 개발자를 진로로 선택하는 결정적인 계기가 되었습니다.
                 </p>
               </div>
 
@@ -670,71 +847,43 @@
                   깃허브
                 </a>
 
+                <!-- ReadMe 모달 버튼 -->
+                <button type="button" class="cta-btn cta-btn--hero" data-bs-toggle="modal"
+                  data-bs-target="#readMeModal">
+                  README
+                </button>
+
               </div>
 
-            </div>
-          </div>
+              <!-- 모달 구조 -->
+              <div class="modal fade" id="readMeModal" tabindex="-1" aria-labelledby="readMeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="readMeModalLabel">프로젝트 README</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- 여기에서 ReadMe 파일 내용 또는 GitHub 내용을 가져올 수 있도록 설정 -->
+                      <div id="readMeContent">
 
-
-        </div>
-
-
-
-
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-
-          <div class="col-lg-6 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="#!" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="/src/assets/project.jpg" />
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    </div>
+                  </div>
                 </div>
-              </a>
-            </div>
-          </div>
 
-
-
-        </div>
-        <!-- /END Project -->
-
-        <!-- Notice: each .row is a project -->
-        <div class="row">
-          <div class="col-lg-6 col-sm-12">
-            <div class="project-wrapper__text load-hidden">
-              <h3 class="project-wrapper__text-title">Project Title 2</h3>
-              <div>
-                <p class="mb-4">
-                  If the project was collaborative, reflect it in this description, that will demonstrate communication
-                  and/or leadership skills.
-                  Additionally, if you made use of the mastery of a second language, it will reflect on you
-                  professionalism.
-                </p>
               </div>
-              <a rel="noreferrer" target="_blank" class="cta-btn cta-btn--hero" href="#!">
-                See Live
-              </a>
-              <a rel="noreferrer" target="_blank" class="cta-btn text-color-main" href="#!">
-                Source Code
-              </a>
             </div>
+
+
           </div>
-          <div class="col-lg-6 col-sm-12">
-            <div class="project-wrapper__image load-hidden">
-              <a rel="noreferrer" href="#!" target="_blank">
-                <div data-tilt data-tilt-max="4" data-tilt-glare="true" data-tilt-max-glare="0.5"
-                  class="thumbnail rounded js-tilt">
-                  <img alt="Project Image" class="img-fluid" src="/src/assets/project.jpg" />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- /END Project -->
-      </div>
-    </div>
+
+
+
   </section>
   <!-- /END Projects Section -->
 

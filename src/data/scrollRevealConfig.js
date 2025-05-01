@@ -29,6 +29,17 @@ export const targetElements = [
       origin: window.innerWidth > 768 ? "left" : "bottom",
     },
   },
+
+
+  {
+    element: ".about-myself",
+    animation: {
+      delay: 600,
+      origin: "bottom",
+    },
+  },
+
+
   {
     element: ".about-wrapper__image",
     animation: {

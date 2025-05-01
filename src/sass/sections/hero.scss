@@ -109,14 +109,15 @@
 
   .container {
     position: absolute;
-    top: 30%;
+    top: 16%;
     left: 20%;
 
     .hero-title {
-      font-size: 5.6rem;
-      font-weight: 700;
-      margin-bottom: 3.2rem;
       text-align: left;
+      color: #fff;
+      font-size: 3.6rem;
+      padding-left: 76px;
+      font-weight: 700;
 
       @include respond(tab-land) {
         font-size: 4rem;
