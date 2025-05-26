@@ -13257,7 +13257,7 @@ a:hover {
 }
 
 .section-title {
-  margin: 0 auto 6.5rem;
+  margin: 20px auto 6.5rem;
   display: table;
   position: relative;
 }
@@ -13520,7 +13520,7 @@ section {
   background-color: #222;
   border-top: 0;
   height: 100%;
-  padding-bottom: 10%;
+  padding-bottom: 17%;
 }
 
 #about .section-title, #about .section-title .section-title__text {
@@ -13911,6 +13911,14 @@ section {
   background-color: #fff;
   margin-top: -10rem;
   padding-top: 15rem;
+}
+
+#projects .project-link {
+  margin-top: 27px;
+}
+
+#projects .project-learned {
+  margin-top: 67px;
 }
 
 #projects #modal-img:hover {
